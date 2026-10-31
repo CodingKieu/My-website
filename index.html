@@ -121,11 +121,10 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: va
 
 /* ---------- about + connect ---------- */
 .bottom { display: grid; grid-template-columns: 5fr 7fr; gap: 2.2rem; margin-top: 2.5rem; align-items: center; }
-.sticky {
-  background: linear-gradient(to bottom, #d9b8ff 0%, #b98cf0 100%); border: 0; padding: 1.2rem 1.4rem 1.4rem;
-  box-shadow: 2px 3px 6px rgba(0,0,0,.35);
-}
-.sticky h2 { font: 1rem var(--px); color: #4b1f8a; text-shadow: 2px 2px 0 rgba(255,255,255,.6); margin-bottom: .8rem; text-align: center; }
+.sticky { background: none; border: 0; box-shadow: none; padding: 1rem; text-align: center; }
+.sticky:hover { box-shadow: none; scale: 1; }
+.sticky h2 { font: 1rem var(--px); color: var(--primary); text-shadow: 2px 2px 0 var(--dark); margin-bottom: .8rem; }
+.sticky p { color: var(--primary); font-weight: 700; }
 .connect { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
 .link-btn {
   display: inline-flex; align-items: center; justify-content: center; gap: .6rem; width: 250px; padding: .8rem 1rem;
@@ -178,7 +177,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: va
 
   <!-- TOP -->
   <header class="top">
-    <img class="portrait pop" style="--d:.5s" src="https://raw.githubusercontent.com/Rohulk/My-website/refs/heads/main/Screenshot%202026-08-06%20210209.png" alt="Khai Kieu">
+    <img class="portrait pop" style="--d:.5s" src="Dog.png" alt="Khai Kieu's dog" onerror="var f='https://raw.githubusercontent.com/Rohulk/My-website/refs/heads/main/Dog.png';if(this.src!==f){this.onerror=null;this.src=f;}">
     <div class="name-tag pop" style="--d:.7s">
       <h1>Khai Kieu <img src="https://media.tenor.com/EvBq1fBvyiwAAAAj/pixel-heart.gif" class="heart-gif" alt="Pixel Heart"></h1>
       <p class="tagline">Data Science Addict</p>
@@ -260,7 +259,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: va
 
   <!-- BOTTOM: about + connect -->
   <div class="bottom">
-    <section class="piece sticky reveal" style="--r:-4deg">
+    <section class="piece sticky reveal" style="--r:-2deg">
       <h2>About Me</h2>
       <p>Computer scientist with a specialization in data science. Sent to earth to discover its beauty and the life it nurtured.</p>
     </section>
