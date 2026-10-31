@@ -17,7 +17,9 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #fff;
+  background-color: var(--light);
+  background-image: radial-gradient(rgba(255,105,180,.18) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
   color: var(--dark);
   line-height: 1.6;
   overflow-x: hidden;
@@ -40,13 +42,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: va
 /* ---------- the board ---------- */
 .th-profile { padding: 15px; }
 .board {
-  max-width: 1100px; margin: 0 auto; position: relative; overflow: hidden;
-  background-color: var(--light);
-  background-image: radial-gradient(rgba(255,105,180,.18) 1.5px, transparent 1.5px);
-  background-size: 22px 22px;
-  border: 20px ridge var(--secondary);
-  border-radius: 10px;
-  box-shadow: inset 1px 1px 3px rgba(0,0,0,.5);
+  max-width: 1100px; margin: 0 auto; position: relative;
   padding: 2rem;
 }
 .board-grid { display: grid; grid-template-columns: 7fr 5fr; gap: 2.2rem; margin-top: 1.5rem; align-items: start; }
@@ -152,7 +148,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: va
 /* ---------- Pusheen: drifts left to right, spins, can be grabbed and flung (floaters.js) ---------- */
 .floater {
   position: fixed; left: 0; top: 0; z-index: 50;
-  width: clamp(90px, 12vw, 150px); height: auto; aspect-ratio: 1 / 1; object-fit: contain;
+  width: clamp(110px, 14vw, 170px); height: auto; aspect-ratio: 1 / 1; object-fit: contain;
   filter: drop-shadow(2px 3px 3px rgba(0,0,0,.3));
   transform: translate(-100vw, 0);   /* parked off-screen until floaters.js starts it */
   transition: none;
@@ -171,7 +167,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: va
 .modal-8bit p { margin-bottom: 1.5rem; }
 
 @media (max-width: 860px) {
-  .board { padding: 1.2rem; }
+  .board { padding: .6rem; }
   .board-grid, .bottom { grid-template-columns: 1fr; }
   .top { justify-content: center; text-align: center; }
   .name-tag h1 { font-size: 1.6rem; justify-content: center; }
@@ -303,8 +299,8 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: va
 </div>
 </main>
 
-<!-- Pusheen: floaters.js picks up every .floater. If the wikimedia hotlink ever fails, it falls back to pusheen.png in this folder. -->
-<img class="floater" src="https://upload.wikimedia.org/wikipedia/en/f/fd/Pusheen_the_Cat.png" data-alt="pusheen.png" alt="" aria-hidden="true" onerror="var f=this.getAttribute('data-alt');if(f){this.removeAttribute('data-alt');this.src=f;}">
+<!-- Pusheen: floaters.js picks up every .floater. Uses Pusheen.png from the repo root (name is case-sensitive); falls back to the wikimedia copy. -->
+<img class="floater" src="Pusheen.png" data-alt="https://upload.wikimedia.org/wikipedia/en/f/fd/Pusheen_the_Cat.png" alt="" aria-hidden="true" onerror="var f=this.getAttribute('data-alt');if(f){this.removeAttribute('data-alt');this.src=f;}">
 
 <div class="modal-overlay" id="modalOverlay"></div>
 <div class="modal-8bit" id="modal8bit">
